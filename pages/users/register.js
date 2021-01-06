@@ -8,6 +8,7 @@ const Register = () => {
   const [password, setPassword] = useState('')
   const [passConf, setPassConf] = useState('')
   const [notification, setNotification] = useState('')
+
   const handleLogin = (e) => {
     e.preventDefault()
     if (password !== passConf) {
@@ -24,6 +25,7 @@ const Register = () => {
     })
     router.push('/')
   }
+
   return (
     <div>
       <h1>Create new user</h1>

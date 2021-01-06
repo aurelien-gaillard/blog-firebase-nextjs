@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import { fireauth } from '../../config/fire-config'
 import { useRouter } from 'next/router'
+
 const Login = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [notify, setNotification] = useState('')
   const router = useRouter()
+
   const handleLogin = (e) => {
     e.preventDefault()
     fireauth.signInWithEmailAndPassword(username, password).catch((err) => {
@@ -19,6 +21,7 @@ const Login = () => {
     setPassword('')
     router.push('/')
   }
+
   return (
     <div>
       <h1>Login</h1>
